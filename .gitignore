@@ -1,0 +1,20 @@
+#
+# gitignore file for IAR project
+#
+# https://www.iar.com/support/tech-notes/ide/which-files-should-be-version-controlled/
+#
+
+# IAR Settings
+**/settings/
+
+# IAR Debug
+**/Exe/*
+**/List/*
+**/Obj/*
+**/Output/
+**/build/
+**/output/
+**/Debug/
+
+# IAR Project
+*.dep
