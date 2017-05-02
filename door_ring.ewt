@@ -1953,33 +1953,42 @@
     </file>
   </group>
   <group>
-    <name>Bsp</name>
-    <file>
-      <name>$PROJ_DIR$\Bsp\bsp.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Bsp\eeprom.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Bsp\timer.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Bsp\uart.c</name>
-    </file>
-  </group>
-  <group>
     <name>Doc</name>
     <file>
       <name>$PROJ_DIR$\Doc\ReadMe.txt</name>
     </file>
   </group>
   <group>
-    <name>STM8S_StdPeriph_Driver</name>
+    <name>hw</name>
+    <group>
+      <name>inc</name>
+      <file>
+        <name>$PROJ_DIR$\hw\hw_board.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\hw\hw_mcu.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\hw\hw_usart.h</name>
+      </file>
+    </group>
+    <file>
+      <name>$PROJ_DIR$\hw\hw_board.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\hw\hw_usart.c</name>
+    </file>
+  </group>
+  <group>
+    <name>std_per</name>
     <file>
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_adc1.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_awu.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_beep.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_clk.c</name>
@@ -1994,7 +2003,19 @@
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_gpio.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_i2c.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_itc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_iwdg.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_rst.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_spi.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim1.c</name>
@@ -2003,7 +2024,13 @@
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim2.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_uart1.c</name>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim3.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim4.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_uart2.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_wwdg.c</name>

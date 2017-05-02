@@ -351,16 +351,16 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
 功    能 ： 中断处理函数
 参    数 ： UART1_RX_IRQHandler --- 串口1接收
 返 回 值 ： void
-作    者 ： Huang Fugui
+作    者 ： Veiko
 *************************************************/
-INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
+/*INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
   uint8_t ch;
   if(UART1_GetITStatus(UART1_IT_RXNE)!=RESET)
   {
     ch =  UART1_ReceiveData8();
   }
-}
+}*/
 
 
 #endif /* (STM8S208) || (STM8S207) || (STM8S103) || (STM8S903) || (STM8AF62Ax) || (STM8AF52Ax) */
@@ -421,12 +421,12 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   * @param  None
   * @retval None
   */
- INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
- {
+// INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
+// {
     /* In order to detect unexpected events during development,
        it is recommended to set a breakpoint on the following instruction.
     */
- }
+// }
 #endif /* (STM8S105) || (STM8AF626x) */
 
 #if defined(STM8S207) || defined(STM8S007) || defined(STM8S208) || defined (STM8AF52Ax) || defined (STM8AF62Ax)

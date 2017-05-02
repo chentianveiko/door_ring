@@ -1,28 +1,43 @@
-#include "bsp.h"
-#include "uart.h"
-#include "timer.h"
-#include "eeprom.h"
 #include "main.h"
+#include "hw_mcu.h"
+#include "hw_board.h"
+#include "hw_usart.h"
+
+static void app_usart1_rx_handler(uint8_t ch);
 
 void main(void)
-{  
-  BSP_Initializes();
-  disableInterrupts();
-  enableInterrupts();
+{
+	{
+		hw_board_init();
+	}
+
+	{
+		hw_usart_init();
+
+		hw_usart_set_rx_handler(app_usart1_rx_handler);
+	}
+        
+        enableInterrupts(); 
   
-  while(1)
-  {
-    ;
-  }
+	while(1)
+	{
+                hw_board_delay_ms(1000);
+		hw_usart_write("test \r\n",sizeof("test \r\n"));
+	}
+}
+/*******************************************************************************************
+ * @brief    应用层串口数据处理回调函数
+ * @param    ch 串口接收到的数据
+ * @return   none
+ */
+static void app_usart1_rx_handler(uint8_t ch){
+	hw_usart_write(&ch, 1);
 }
 
 #ifdef USE_FULL_ASSERT
 
 void assert_failed(u8* file, u32 line)
 {
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-
   /* Infinite loop */
   while (1)
   {
