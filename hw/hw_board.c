@@ -43,17 +43,16 @@ void hw_board_delay_ms(uint16_t ms) {
  * @brief    设置系统的系统时钟频率,该应用中设置为16MHz
  */
 static void _hw_board_clock_init(void) {
-	CLK_ClockSwitchConfig(CLK_SWITCHMODE_AUTO, CLK_SOURCE_HSI, DISABLE,
-			CLK_CURRENTCLOCKSTATE_DISABLE);
 	CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1); //HSI = 16M (1分频)
-	while (CLK_GetFlagStatus(CLK_FLAG_HSIRDY) == RESET)
+	while (CLK_GetFlagStatus(CLK_FLAG_HSIRDY) == RESET){
 		; /* 等待时钟切换完成并稳定 */
+	}
 }
 /*******************************************************************************************
  * @brief    通过PC4引脚将系统时钟输出
  */
 static void _hw_sys_clock_out_config(void) {
-#if 1
+#if 0
 	/* 系统时钟输出测试 */
 	GPIO_Init(GPIOD, (GPIO_Pin_TypeDef) GPIO_PIN_0, GPIO_MODE_OUT_PP_HIGH_FAST);
 
