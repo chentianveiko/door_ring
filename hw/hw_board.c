@@ -4,10 +4,9 @@
  *******************************************************************************
  */
 #include "hw_board.h"
-#include <stdlib.h>
-#include <string.h>
 
 static void _hw_board_clock_init(void);
+static void _hw_sys_clock_out_config(void);
 
 /*******************************************************************************************
  * @brief    板卡硬件初始化
@@ -15,6 +14,7 @@ static void _hw_board_clock_init(void);
 void hw_board_init(void)
 {
    _hw_board_clock_init();
+   _hw_sys_clock_out_config();
 }
 /*******************************************************************************************
  * @brief    阻塞式微秒级延时(对应系统时钟频率为:16Mhz)
@@ -44,6 +44,21 @@ void hw_board_delay_ms(uint16_t ms){
  */
 static void _hw_board_clock_init(void)
 {
-	CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);  // 16Mhz
+	
+	//CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1); //HSI = 16M (1分频)
+       // CLK_ClockSwitchConfig(CLK_SWITCHMODE_AUTO, CLK_SOURCE_HSI, DISABLE, CLK_CURRENTCLOCKSTATE_DISABLE);
+	//while(CLK_GetFlagStatus(CLK_FLAG_HSIRDY) == RESET);  /* 等待时钟切换完成并稳定 */
+}
+/*******************************************************************************************
+ * @brief    通过PC4引脚将系统时钟输出
+ */
+static void _hw_sys_clock_out_config(void){
+#if 1
+  /* 系统时钟输出测试 */
+  GPIO_Init(GPIOD, (GPIO_Pin_TypeDef)GPIO_PIN_0, GPIO_MODE_OUT_PP_HIGH_FAST);
+  
+  //CLK_CCOConfig(CLK_OUTPUT_LSI);
+  //CLK_CCOCmd(ENABLE);
+#endif
 }
 

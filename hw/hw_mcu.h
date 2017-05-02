@@ -2,6 +2,7 @@
 #define __HW_MCU_H__
 
 #include "stm8s.h"
+#include "stm8s_clk.h"
 
 #include <string.h>
 

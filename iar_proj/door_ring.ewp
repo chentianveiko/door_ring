@@ -22,7 +22,7 @@
         <option>
           <name>GenCodeModel</name>
           <version>0</version>
-          <state>2</state>
+          <state>0</state>
         </option>
         <option>
           <name>GenDataModel</name>
@@ -61,7 +61,7 @@
         </option>
         <option>
           <name>GenRTConfigPath</name>
-          <state>$TOOLKIT_DIR$\LIB\dlstm8mmn.h</state>
+          <state>$TOOLKIT_DIR$\LIB\dlstm8smn.h</state>
         </option>
         <option>
           <name>GenLibInFormatter</name>
@@ -147,21 +147,21 @@
         </option>
         <option>
           <name>IccOptLevel</name>
-          <state>3</state>
+          <state>0</state>
         </option>
         <option>
           <name>IccOptStrategy</name>
           <version>0</version>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>IccOptLevelSlave</name>
-          <state>3</state>
+          <state>0</state>
         </option>
         <option>
           <name>IccOptAllowList</name>
           <version>0</version>
-          <state>111111</state>
+          <state>000000</state>
         </option>
         <option>
           <name>IccGenerateDebugInfo</name>
@@ -205,7 +205,7 @@
         </option>
         <option>
           <name>CCListCFile</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCListCMnemonics</name>
@@ -257,13 +257,10 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>$PROJ_DIR$\</state>
-          <state>$PROJ_DIR$\STM8S_StdPeriph_Driver\src</state>
-          <state>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc</state>
-          <state>$PROJ_DIR$\App</state>
-          <state>$PROJ_DIR$\Bsp</state>
-          <state>$PROJ_DIR$\hw</state>
-          <state>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc</state>
+          <state>$PROJ_DIR$</state>
+          <state>$PROJ_DIR$\..\app</state>
+          <state>$PROJ_DIR$\..\hw</state>
+          <state>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -549,7 +546,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>templproj.out</state>
+          <state>$PROJ_FNAME$.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
@@ -585,7 +582,7 @@
         </option>
         <option>
           <name>IlinkMapFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogFile</name>
@@ -609,7 +606,7 @@
         </option>
         <option>
           <name>IlinkIcfOverride</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkIcfFile</name>
@@ -1378,7 +1375,7 @@
         </option>
         <option>
           <name>IlinkMapFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogFile</name>
@@ -1595,21 +1592,36 @@
     </settings>
   </configuration>
   <group>
-    <name>App</name>
+    <name>app</name>
+    <group>
+      <name>inc</name>
+      <file>
+        <name>$PROJ_DIR$\..\app\app.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\app\global_define.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\app\global_variable.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\app\stm8s_conf.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\app\stm8s_it.h</name>
+      </file>
+    </group>
     <file>
-      <name>$PROJ_DIR$\App\global_variable.c</name>
+      <name>$PROJ_DIR$\..\app\app.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\App\main.c</name>
+      <name>$PROJ_DIR$\..\app\global_variable.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\App\stm8s_it.c</name>
+      <name>$PROJ_DIR$\..\app\main.c</name>
     </file>
-  </group>
-  <group>
-    <name>Doc</name>
     <file>
-      <name>$PROJ_DIR$\Doc\ReadMe.txt</name>
+      <name>$PROJ_DIR$\..\app\stm8s_it.c</name>
     </file>
   </group>
   <group>
@@ -1617,82 +1629,70 @@
     <group>
       <name>inc</name>
       <file>
-        <name>$PROJ_DIR$\hw\hw_board.h</name>
+        <name>$PROJ_DIR$\..\hw\hw_board.h</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\hw\hw_mcu.h</name>
+        <name>$PROJ_DIR$\..\hw\hw_mcu.h</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\hw\hw_usart.h</name>
+        <name>$PROJ_DIR$\..\hw\hw_usart.h</name>
       </file>
     </group>
     <file>
-      <name>$PROJ_DIR$\hw\hw_board.c</name>
+      <name>$PROJ_DIR$\..\hw\hw_board.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\hw\hw_usart.c</name>
+      <name>$PROJ_DIR$\..\hw\hw_usart.c</name>
     </file>
   </group>
   <group>
-    <name>std_per</name>
+    <name>std_periph</name>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_adc1.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_awu.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_awu.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_clk.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_beep.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_exti.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_clk.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_flash.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_exti.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_gpio.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_flash.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_i2c.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_gpio.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_itc.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_i2c.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_iwdg.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_itc.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_rst.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_iwdg.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_spi.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_rst.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_tim1.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_spi.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_tim2.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim1.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_tim3.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim2.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_tim4.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim3.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_tim4.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_uart2.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_wwdg.c</name>
+      <name>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\src\stm8s_uart2.c</name>
     </file>
   </group>
-  <file>
-    <name>$PROJ_DIR$\Bsp\main.h</name>
-  </file>
 </project>
 
 

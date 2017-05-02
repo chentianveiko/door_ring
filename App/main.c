@@ -3,7 +3,7 @@
 #include "hw_board.h"
 #include "hw_usart.h"
 
-static void app_usart1_rx_handler(uint8_t ch);
+static void app_usart2_rx_handler(uint8_t ch);
 
 void main(void)
 {
@@ -14,15 +14,18 @@ void main(void)
 	{
 		hw_usart_init();
 
-		hw_usart_set_rx_handler(app_usart1_rx_handler);
+		hw_usart_set_rx_handler(app_usart2_rx_handler);
 	}
         
         enableInterrupts(); 
   
 	while(1)
 	{
-                hw_board_delay_ms(1000);
-		hw_usart_write("test \r\n",sizeof("test \r\n"));
+          GPIO_WriteHigh(GPIOD, GPIO_PIN_0);
+          hw_board_delay_ms(50);
+          GPIO_WriteLow(GPIOD, GPIO_PIN_0);
+          hw_board_delay_ms(50);
+		//hw_usart_write("test \r\n",sizeof("test \r\n"));
 	}
 }
 /*******************************************************************************************
@@ -30,7 +33,7 @@ void main(void)
  * @param    ch 串口接收到的数据
  * @return   none
  */
-static void app_usart1_rx_handler(uint8_t ch){
+static void app_usart2_rx_handler(uint8_t ch){
 	hw_usart_write(&ch, 1);
 }
 

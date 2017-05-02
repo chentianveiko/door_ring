@@ -12,8 +12,10 @@ hw_usart_rx_handler_t hw_usart_rx_handler_app = (hw_usart_rx_handler_t)0;
 void hw_usart_init(void){
 	  UART2_Init((uint32_t)115200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,
 	                UART2_SYNCMODE_CLOCK_DISABLE, UART2_MODE_TXRX_ENABLE);
+          
+          UART2_ITConfig(UART2_IT_RXNE_OR, ENABLE);
+          
 	  UART2_Cmd(ENABLE);
-	  UART2_ITConfig(UART2_IT_RXNE, ENABLE);
 }
 /*******************************************************************************************
  * @brief    使用硬件串口发送数据
@@ -25,7 +27,7 @@ void hw_usart_write(uint8_t *data, uint16_t length){
 	uint16_t i = 0;
 
 	while(length--){
-		while((UART2->SR & (uint8_t)UART2_FLAG_TC) == RESET);
+		while((UART2->SR & (uint8_t)UART2_FLAG_TXE) == (uint8_t)0x00);
 		UART2->DR = data[i++];
 	}
 }
