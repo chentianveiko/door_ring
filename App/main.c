@@ -21,11 +21,7 @@ void main(void)
   
 	while(1)
 	{
-          GPIO_WriteHigh(GPIOD, GPIO_PIN_0);
-          hw_board_delay_ms(50);
-          GPIO_WriteLow(GPIOD, GPIO_PIN_0);
-          hw_board_delay_ms(50);
-		//hw_usart_write("test \r\n",sizeof("test \r\n"));
+          ;
 	}
 }
 /*******************************************************************************************
