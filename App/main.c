@@ -3,6 +3,7 @@
 #include "hw_board.h"
 #include "hw_usart.h"
 #include "hw_timer.h"
+#include "global_variable.h"
 
 #define APP_SOFT_TIMER   HW_ST_TIMER_2
 static void app_usart2_rx_handler(hw_usart_rx_t *s);
@@ -21,12 +22,14 @@ void main(void)
 		hw_usart_set_rx_handler(app_usart2_rx_handler);
 	}
 	enableInterrupts();
+        
+        hw_usart_write((uint8_t *)esp8266_auto_connect_to_ap);
   
 	while(1)
 	{
 		hw_soft_timer_start(APP_SOFT_TIMER,5000);
 		while(hw_soft_timer_is_run_out(APP_SOFT_TIMER) != true);
-		hw_usart_write("AT+GMR\r\n",sizeof("AT+GMR\r\n"));
+		
 	}
 }
 /*******************************************************************************************

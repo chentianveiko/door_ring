@@ -36,12 +36,27 @@ void hw_usart_init(void){
  * @param    length 要发送的数据长度(字节)
  * @return   none
  */
-void hw_usart_write(uint8_t *data, uint16_t length){
+void hw_usart_write_len(uint8_t *data, uint16_t length){
 	uint16_t i = 0;
 
 	while(length--){
 		while((UART2->SR & (uint8_t)UART2_FLAG_TXE) == (uint8_t)0x00);
 		UART2->DR = data[i++];
+	}
+}
+/*******************************************************************************************
+ * @brief    使用硬件串口发送数据
+ * @param    data 数据指针
+ * @param    length 要发送的数据长度(字节)
+ * @return   none
+ */
+void hw_usart_write(uint8_t *data){
+	uint16_t i = 0;
+
+	while(data[i] != '\0'){
+		while((UART2->SR & (uint8_t)UART2_FLAG_TXE) == (uint8_t)0x00);
+		UART2->DR = data[i];
+		i++;
 	}
 }
 /*******************************************************************************************
