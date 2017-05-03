@@ -4,6 +4,7 @@
 #include "hw_usart.h"
 #include "hw_timer.h"
 
+#define APP_SOFT_TIMER   HW_ST_TIMER_2
 static void app_usart2_rx_handler(hw_usart_rx_t *s);
 
 void main(void)
@@ -23,7 +24,9 @@ void main(void)
   
 	while(1)
 	{
-          ;
+		hw_soft_timer_start(APP_SOFT_TIMER,5000);
+		while(hw_soft_timer_is_run_out(APP_SOFT_TIMER) != true);
+		hw_usart_write("AT+GMR\r\n",sizeof("AT+GMR\r\n"));
 	}
 }
 /*******************************************************************************************
@@ -32,7 +35,7 @@ void main(void)
  * @return   none
  */
 static void app_usart2_rx_handler(hw_usart_rx_t *s){
-	hw_usart_write(s->data, s->len);
+	//hw_usart_write(s->data, s->len);
 	s->read_lock = false;
 	s->len = 0;
 }
