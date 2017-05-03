@@ -26,7 +26,7 @@ void hw_usart_init(void){
 
 	hw_soft_timer_set_handler(HW_USART2_SOFT_TIMER,_hw_usart_soft_timer_handler);
 
-	UART2_Init((uint32_t)57600, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,UART2_SYNCMODE_CLOCK_DISABLE, UART2_MODE_TXRX_ENABLE);
+	UART2_Init((uint32_t)19200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,UART2_SYNCMODE_CLOCK_DISABLE, UART2_MODE_TXRX_ENABLE);
     UART2_ITConfig(UART2_IT_RXNE_OR, ENABLE);
     UART2_Cmd(ENABLE);
 }
@@ -84,8 +84,8 @@ INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
 
   if(UART2_GetITStatus(UART2_IT_RXNE)!=RESET)
   {
+	  j = 0;
 	  hw_soft_timer_stop(HW_USART2_SOFT_TIMER);
-          j = 0;
 	  while(UART2_GetFlagStatus(UART2_FLAG_RXNE) != RESET){
 		  buff[j++] = UART2_ReceiveData8();
 	  }
