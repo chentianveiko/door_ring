@@ -347,11 +347,11 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
 
 
 /************************************************
-º¯ÊýÃû³Æ £º INTERRUPT_HANDLER
-¹¦    ÄÜ £º ÖÐ¶Ï´¦Àíº¯Êý
-²Î    Êý £º UART1_RX_IRQHandler --- ´®¿Ú1½ÓÊÕ
-·µ »Ø Öµ £º void
-×÷    Õß £º Veiko
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ INTERRUPT_HANDLER
+ï¿½ï¿½    ï¿½ï¿½ ï¿½ï¿½ ï¿½Ð¶Ï´ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½    ï¿½ï¿½ ï¿½ï¿½ UART1_RX_IRQHandler --- ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ ï¿½ï¿½ Öµ ï¿½ï¿½ void
+ï¿½ï¿½    ï¿½ï¿½ ï¿½ï¿½ Veiko
 *************************************************/
 /*INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
 {
@@ -501,12 +501,12 @@ INTERRUPT_HANDLER(TIM6_UPD_OVF_TRG_IRQHandler, 23)
   * @param  None
   * @retval None
   */
- INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
- {
+// INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
+ //{
   /* In order to detect unexpected events during development,
      it is recommended to set a breakpoint on the following instruction.
   */
- }
+// }
 #endif /* (STM8S903) || (STM8AF622x)*/
 
 /**

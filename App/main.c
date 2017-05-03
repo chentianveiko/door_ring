@@ -2,22 +2,24 @@
 #include "hw_mcu.h"
 #include "hw_board.h"
 #include "hw_usart.h"
+#include "hw_timer.h"
 
 static void app_usart2_rx_handler(hw_usart_rx_t *s);
 
 void main(void)
 {
+	disableInterrupts();
 	{
 		hw_board_init();
 	}
 
 	{
+		hw_soft_timer_init();
 		hw_usart_init();
 
 		hw_usart_set_rx_handler(app_usart2_rx_handler);
 	}
-        
-        enableInterrupts(); 
+	enableInterrupts();
   
 	while(1)
 	{

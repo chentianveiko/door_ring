@@ -1974,6 +1974,18 @@
     </file>
   </group>
   <group>
+    <name>driver</name>
+    <group>
+      <name>inc</name>
+      <file>
+        <name>$PROJ_DIR$\..\driver\esp8266.h</name>
+      </file>
+    </group>
+    <file>
+      <name>$PROJ_DIR$\..\hw\esp8266.c</name>
+    </file>
+  </group>
+  <group>
     <name>hw</name>
     <group>
       <name>inc</name>
@@ -1984,11 +1996,17 @@
         <name>$PROJ_DIR$\..\hw\hw_mcu.h</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\hw\hw_timer.h</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\hw\hw_usart.h</name>
       </file>
     </group>
     <file>
       <name>$PROJ_DIR$\..\hw\hw_board.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\hw\hw_timer.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\hw\hw_usart.c</name>
