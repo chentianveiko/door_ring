@@ -8,5 +8,7 @@ void hw_board_init(void);
 void hw_board_delay_us(uint16_t us);
 void hw_board_delay_ms(uint16_t ms);
 
+void hw_board_get_mac(char mac[13]);
+
 #endif
 

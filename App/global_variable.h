@@ -4,13 +4,20 @@
 
 #include "global_define.h"
 
-extern const uint8_t esp8266_get_wifi_mode[];
-extern const uint8_t esp8266_set_wifi_sta_mode[];
-extern const uint8_t esp8266_set_wifi_ap_mode[];
-extern const uint8_t esp8266_set_wifi_ap_sta_mode[];
-extern const uint8_t esp8266_get_sta_mac[];
-extern const uint8_t esp8266_connect_ap[];
-extern const uint8_t esp8266_auto_connect_to_ap[];
+
+typedef struct{
+	uint8_t ssid[32];
+	uint8_t pwd[32];
+
+	uint8_t ser_add[32];
+	uint8_t ser_port[8];
+
+	uint8_t mac[25];
+
+	bool rf_rx_flag;
+}door_ring_t;
+
+extern door_ring_t door_ring;
 
 
 #endif /* _GLOBAL_VARIABLE_H */

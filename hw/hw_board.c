@@ -4,10 +4,26 @@
  *******************************************************************************
  */
 #include "hw_board.h"
+#include "stdio.h"
 
 static void _hw_board_clock_init(void);
 static void _hw_sys_clock_out_config(void);
 
+/*******************************************************************************************
+ * @brief    获取字符串格式的芯片ID号(24个字符)
+ */
+void hw_board_get_mac(char mac[25]){
+	uint8_t i = 0;
+	uint8_t buff[13];
+	memset(buff,'\0',13);
+	memset(mac,'\0',25);
+
+	HW_MCU_READ_DEVICE_ID(buff);
+
+	for(i=0;i<12;i++){
+		sprintf(mac+(i*2), "%02X", buff[i]);
+	}
+}
 /*******************************************************************************************
  * @brief    板卡硬件初始化
  */

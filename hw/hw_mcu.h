@@ -41,7 +41,7 @@ typedef uint8_t hw_device_id_t[HW_DEVICE_ID_SIZE];
 #define __align_begin(n)  
 #define __align_end()    
 
-#define HW_MCU_READ_DEVICE_ID(id)   memcpy(id, (uint8_t *)0x4926, HW_DEVICE_ID_SIZE)
+#define HW_MCU_READ_DEVICE_ID(id)   memcpy(id, (uint8_t *)0x48CD, HW_DEVICE_ID_SIZE)
    
 //#define HW_MCU_READ_DEVICE_ID(id)     \
   id[0] = *((uint8_t *)0x4927);       \
